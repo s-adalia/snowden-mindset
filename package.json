@@ -1,10 +1,10 @@
 {
   "name": "snowden-mindset",
-  "version": "1.0.0",
-  "description": "To get an A 💫",
+  "version": "0.0.2",
+  "description": "To get an A :)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"    
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
+

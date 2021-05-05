@@ -1,6 +1,6 @@
 {
   "name": "snowden-mindset",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "To get an A :)",
   "main": "index.js",
   "scripts": {

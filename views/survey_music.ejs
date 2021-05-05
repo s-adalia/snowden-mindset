@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey: All About Your Music Hobby</title>
+    <br>
+    <link href="../css/survey_music.css" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'/>
+    <script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form>
+     <div class="divider">
+        <img src= "https://64.media.tumblr.com/51927107474938fe13e75c561dead493/99c7809d09174dc9-8b/s1280x1920/06906ddd73b53218cb8bf003ca5c7510f1df64fe.png" alt="header" style="auto">
+
+
+        <h1>Survey: All About Your Music Hobby</h1></header>
+ 
+        <text> We'll ask you about you and your musical instruments, as well as your listening habits and preferences. This survey will take around five minutes of your time. <br><br>First, we'd like to know a bit about you!<br><br> <small> Required fields are marked "<span style="color:red">*</span>".</small></text><br><br>
+     </div>
+     <div class="question">
+        <label for="name"> <b>Your name:</b> <span style="color:red">*</span> </label><br>
+
+        <input type="text" id="name" name="name" onblur="handleNameChange()" required><br><br>
+      </div>
+      <div class="question">
+        <label for="gender"> <b>Gender:</b> <span style="color:red">*</span></label><br>
+
+        <input type="radio" id="male" name="Gender" value="male" onchange="handleGenderChange(event)">
+          <label for="male">Male</label><br>
+        <input type="radio" id="female" name="Gender" value="female" onchange="handleGenderChange(event)">
+          <label for="female">Female</label><br><br>
+      </div>
+      <div class="question">
+        <label for="age"> <b>Age:</b> <span style="color:red">*</span></label><br>
+
+        <input type="radio" id="8-12" name="Age" value="8-12" onchange="handleAgeChange(event)">
+          <label for="8-12">8-12</label><br>
+        <input type="radio" id="13-17" name="Age" value="13-17" onchange="handleAgeChange(event)">
+          <label for="13-17">13-17</label><br>
+        <input type="radio" id="18-22" name="Age" value="18-22" onchange="handleAgeChange(event)">
+          <label for="18-22">18-22</label><br>
+        <input type="radio" id="23-29" name="Age" value="23-29" onchange="handleAgeChange(event)">
+          <label for="23-29">23-29</label><br>
+        <input type="radio" id="30-40" name="Age" value="30-40" onchange="handleAgeChange(event)">
+          <label for="30-40">30-40</label><br>
+        <input type="radio" id="41-55" name="Age" value="41-55" onchange="handleAgeChange(event)">
+          <label for="41-55">41-55+</label><br><br>
+      </div>
+      <div class="question">
+         <label for="country"><b>Choose your country:</b></label>
+
+         <select name="country" id="country" onchange="handleCountryChange(event)">
+            <option value="wala">-</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Belgium">Belgium</option>
+            <option value="China">China</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Egypt">Egypt</option> 
+            <option value="Nepal">Nepal</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Russia">Russia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="united-states">United States</option>
+            
+         </select><br><br>
+      </div>
+      <div class="question">
+        <label for="occupation"> <b>Occupation:</b> </label><br>
+        <input type="text" id="occupation" name="occupation" onblur="handleOccupationChange()"><br><br>
+      </div>
+      <div  class="question">
+        <label for="if-student"><b> If you are a student, what kind of major are you in?</b></label><br>
+         <select name="if-student" id="if-student" onchange="handleMajorChange(event)">
+            <option value="wala2">-</option>
+            <option value="Humanities">Arts & Humanities</option>
+            <option value="Science">Natural and applied sciences</option>
+            <option value="Science_social">Social sciences</option>
+            <option value="business">Business</option>
+         </select><br><br>
+      </div>
+
+      <div  class="divider">
+        <h2>You as a Musician:</h2>
+
+        <img src="https://thissongissick.com/wp-content/uploads/2020/07/A579BED8-757C-4C16-A0BD-D18314614F52.jpeg" alt="jacob collier room" id="jacob">
+
+        <label for="jacobImg" style="font-size:60%" > <i> artist: Jacob Collier and his minions </i></label><br><br>
+      </div>
+      <div class="question">
+        <label for="instrumentslist"> <b>What instruments do you play?<br> <small>(If you play other instruments that are not in the list, please list them inside the "Others" box.)</small></b><br><br></label>
+        
+          <input type="checkbox" id="piano" name="instrumentslist" value="piano" onclick="handleInstrumentsChange(event)">
+            <label for="piano">Piano</label><br>
+          <input type="checkbox" id="guitar" name="instrumentslist" value="guitar" onclick="handleInstrumentsChange(event)">
+            <label for="guitar">Guitar</label><br>
+          <input type="checkbox" id="violin" name="instrumentslist" value="violin" onclick="handleInstrumentsChange(event)">
+            <label for="violin">Violin</label><br>
+          <input type="checkbox" id="ukulele" name="instrumentslist" value="ukulele" onclick="handleInstrumentsChange(event)">
+            <label for="ukelele"> Ukulele</label><br>
+          <input type="checkbox" id="cello" name="instrumentslist" value="cello" onclick="handleInstrumentsChange(event)">
+            <label for="cello">Cello</label><br>
+
+          <input type="checkbox" id="vocals" name="instrumentslist" value="vocals" onclick="handleInstrumentsChange(event)">
+            <label for="vocals"> Vocals</label><br>
+          <input type="checkbox" id="other" name="instrumentslist" value="other" onclick="handleInstrumentsChange(event)">
+            <label for="other"> Others:</label>
+            <input type="text" name="other" id= "customInstrument" onblur="handleCustomInstrumentChange()" placeholder="(e.g. Drums, Bass, Flute, ethnic instrument)" size="40"><br><br>
+      </div>
+      <div class="question">
+        <label for="qty-instruments"><b>How many instruments do you own?</b></label><br>
+         <input type="number" id="qty-instruments" name="qty-instruments" onblur="handleOwnInstrumentsChange()" min="0" max="100"><br><br>
+      </div>
+      <div class="question">
+        <label for="first-instrument"><b>What was the first instrument you learned to play?</b></label><br>
+          <input type="text" name="first-instrument" id="first-instrument" onblur="handleFirstInstrumentChange()"><br><br>
+      </div>
+      <div class="question">
+        <label for="how-long"><b>How many years have you been playing instruments?</b></label><br>
+          <input type="number" id="how-long" name="how-long" onblur="handleYearsPlayingChange()" min="0" max="100" ><br><br>
+      </div>
+
+      <div class="peanuts">
+        <img src="https://i.redd.it/jxggayiylf641.png" alt="fearless-flyers-peanuts"><br><br>
+      </div>
+
+      <div class="question">
+        <label for="music-classes"><b>Have you taken music classes?</b></label><br>
+          <input type="radio" id="classes-yes" name= "music-classes" value="classes-yes" onchange="handleMusicClassesChange(event)">
+            <label for="classes-yes">Yes</label><br>
+          <input type="radio" id="classes-no" name= "music-classes" value="classes-no" onchange="handleMusicClassesChange(event)">
+            <label for="classes-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="how-to-vids"><b>Do you watch how-to videos on playing your instrument(s)?</b></label><br>
+          <input type="radio" id="vids-yes" name= "how-to-vids" value="vids-yes" onchange="handleHowToVidsChange(event)">
+            <label for="vids-yes">Yes</label><br>
+          <input type="radio" id="vids-no" name= "how-to-vids" value="vids-no" onchange="handleHowToVidsChange(event)">
+            <label for="vids-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="practice-time"><b>Do you practice your instrument at least once a week?</b></label><br>
+          <input type="radio" id="practice-yes" name= "practice-time" value="practice-yes" onchange="handlePracticeChange(event)">
+            <label for="practice-yes">Yes</label><br>
+          <input type="radio" id="practice-no" name= "practice-time" value="practice-no" onchange="handlePracticeChange(event)">
+            <label for="practice-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="performance"><b>Have you ever given a performance?</b></label><br>
+          <input type="radio" id="perform-yes" name= "performance" value="perform-yes" onchange="handlePerformanceChange(event)">
+            <label for="perform-yes">Yes</label><br>
+          <input type="radio" id="perform-no" name= "performance" value="perform-no" onchange="handlePerformanceChange(event)">
+            <label for="perform-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="songwritr"><b>Have you ever written your own song(s)?</b></label><br>
+          <input type="radio" id="songw-yes" name= "songwritr" value="songw-yes" onchange="handleSongwritingChange(event)">
+            <label for="songw-yes">Yes</label><br>
+          <input type="radio" id="songw-no" name= "songwritr" value="songw-no" onchange="handleSongwritingChange(event)">
+            <label for="songw-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="family"><b>Is anyone in your family a musician (regardless if they are professional or not)?</b></label><br>
+          <input type="radio" id="fam-yes" name= "family" value="fam-yes" onchange="handleFamilyChange(event)">
+            <label for="fam-yes">Yes</label><br>
+          <input type="radio" id="fam-no" name= "family" value="fam-no" onchange="handleFamilyChange(event)">
+            <label for="fam-no">No</label><br><br>
+      </div>
+      
+      <div  class="divider">
+        <h2>Your Music Taste (last section - we promise!)</h2>
+        <img src="https://i.pinimg.com/originals/23/fa/5c/23fa5cc03a69453a9f917be14fc548bd.jpg" alt="michael-jackson-headphones"><br><br>
+
+        
+      </div>
+
+      <div class="top3">
+        <fieldset id="fav_artists" >
+          <legend><b>Favorite Artists:</b></legend>
+          <label for="top-3-artists"><b>Who are your top 3 favorite music artists? <br>(You don't have to fill in everything.)</b></label><br>
+            <label>1. </label>
+              <input type="text" id="artnow-1" name="top-3-artists" onblur="handleTop3ArtistsChange(event)"><br>
+            <label>2. </label>
+              <input type="text" id="artnow-2" name="top-3-artists" onblur="handleTop3ArtistsChange(event)"><br>
+            <label>3. </label>
+              <input type="text" id="artnow-3" name="top-3-artists" onblur="handleTop3ArtistsChange(event)"><br><br>
+        </fieldset><br>
+        </div>
+    
+
+      <div class="question">
+        <label for="genre"><b>What is your favorite genre?</b></label><br>
+         <select name="genre" id="genre-dropdown" onchange="handleGenreChange(event)">
+            <option value="wala3">-</option>
+            <option value="Pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="Classical">Classical</option>
+            <option value="edm">EDM</option>
+            <option value="Rap">Rap</option>
+            <option value="Hiphop">Hip hop</option>
+            <option value="k-pop">K-Pop</option>
+            <option value="alternative">Alternative</option>
+            <option value="trad">Traditional</option>
+            <option value="jazz">Jazz</option>
+            <option value="soul">Soul</option>
+            <option value="folk">Folk</option>
+            <option value="country">Country</option>
+         </select><br><br>
+      </div>
+      <div class="question">
+        <label for="earworm"><b>What is one song that is stuck in your head right now?</b></label><br>
+          <input type="text" id="earworm" name="earworm" onblur="handleEarwormChange()" size="30"><br><br>
+      </div>
+      <div class="question">
+        <label for="hours"><b>How many hours per day do you listen to music?</b></label><br>
+        <select name="hours" id="hours" onchange="handleListenHoursChange(event)">
+          <option value="wala3">-</option>
+          <option value="less1">Less than one hour</option>
+          <option value="one">1-2 hours</option>
+          <option value="three">3-4 hours</option>
+          <option value="five">4-5 hours</option>
+          
+        </select><br><br>
+      </div>
+      <div class="question">
+        <label for="provider"><b>Which provider(s) do you use to listen to music?</b></label><br>
+          <input type="checkbox" id="yt" name="provider" value="yt"; onclick="handleProviderChange(event)">
+            <label for="yt">Youtube</label><br>
+          <input type="checkbox"; id="apple"; name="provider"; value="apple"; onclick="handleProviderChange(event)">
+            <label for="apple">Apple Music</label><br>
+          <input type="checkbox"; id="spotify"; name="provider"; value="spotify"; onclick="handleProviderChange(event)">
+            <label for="spotify">Spotify</label><br>
+          <input type="checkbox"; id="amazon"; name="provider"; value="amazon"; onclick="handleProviderChange(event)">
+            <label for="amazon">Amazon Music</label><br>
+          <input type="checkbox"; id="radio"; name="provider"; value="radio"; onclick="handleProviderChange(event)">
+            <label for="radio">The radio</label><br>
+          <input type="checkbox"; id="download"; name="provider"; value="download"; onclick="handleProviderChange(event)">
+            <label for="download">Music I downloaded</label><br>
+          <input type="checkbox"; id="others-m"; name="provider"; value="others-m"; onclick="handleProviderChange(event)">
+            <label for="others-m">Other</label><br><br>
+      </div>
+      <div class="question">
+        <label for="albums"><b>Do you buy albums?</b></label><br>
+          <input type="radio" id="albums-yes" name= "albums" value="albums-yes"; onchange="handleAlbumsChange(event)">
+          <label for="albums-yes">Yes</label><br>
+          <input type="radio" id="albums-no" name= "albums" value="albums-no"; onchange="handleAlbumsChange(event)">
+          <label for="albums-no">No</label><br><br>
+      </div>
+      <div class="question">
+        <label for="concert-memo"><b>What was the most memorable concert you've attended?</b></label><br>
+            <input type="text"; id="concert-memo"; name="concert-memo"; placeholder="Band/artist name, location, date"; ; onblur="handleMemorableConcertChange()"; size="40"><br><br>
+      </div>
+      <div class="question">
+        <label for="dream-concert"><b>What concert is your dream to attend?</b></label><br>
+          <input type="text"; id="dream-concert"; name="dream-concert"; onblur="handleDreamConcertChange()"; size="30"><br><br>
+      </div>
+      
+      <div class="question">
+        <label for="dream-artist"><b>If you could spend one day with any music artist, who would it be?</b></label><br>
+          <input type="text"; id="dream-artist"; name="dream-artist"; ; onblur="handleDreamArtistChange()"><br><br>
+      </div>
+
+      <div class="peanuts">
+        
+        <img src="https://i.pinimg.com/originals/29/47/d3/2947d3c2a58d9aaaa4c7955738786d13.jpg"; alt="beatles-screaming">
+      
+        <br><br>
+      </div>
+      <div>
+        <text>Ahhh!!!!! You've come to the end of the survey.<br> The Beatles are going crazy over you! Congratulations!! Thank you so much.</text><br><br>
+
+      </div>
+      <div>
+        <button class="button" onclick="saveMusicData(event)">Submit</button>
+      </div>
+     </form>
+
+     <script src="../js/samantha_main.js"></script>
+  </body>
+</html>

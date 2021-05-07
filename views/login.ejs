@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="333642631602-h2l1m29lfb5c1d0dta76nvv4so4bjeo4.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="476306934446-6f3755lqe4m9jimq5vqctu1b8hefhhkp.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>Login</title>
 </head>
 <body>
-
+    <h1>Welcome to login!</h1>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
-    <script>
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-        console.log('User signed out.');
-        });
-    }
-    </script>
+    <a href="#" onclick="signOut();">Sign out</a>
+    
 
     <script>
     function onSignIn(googleUser) {
@@ -36,12 +29,19 @@
         xhr.onload = function() {
             console.log('Signed in as: ' + xhr.responseText);
             if(xhr.responseText == 'success'){
-                signOut();
-                location.assign('/profile')
+                //signOut();
+                location.assign('/')
             }
         };
         xhr.send(JSON.stringify({token : id_token}));
       }
+
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        console.log('User signed out.');
+        });
+    }
     </script>
     
 </body>

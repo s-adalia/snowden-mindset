@@ -40,16 +40,49 @@ app.post('/login', (req,res)=>{
 
 })
 
-app.get("/login_index", (req, res) => {
-	res.render("login_index");
-})
-
-app.get('/profile',  (req, res)=>{
+app.get('/profile', checkAuthenticated (req, res)=>{
     let user = req.user;
     res.render('profile', {user});
 })
 
-app.get('/protectedRoute',  (req,res)=>{
+function checkAuthenticated(req, res, next){
+
+    let token = req.cookies['session-token'];
+
+    let user = {};
+    async function verify() {
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
+        });
+        const payload = ticket.getPayload();
+        user.name = payload.name;
+        user.email = payload.email;
+        user.picture = payload.picture;
+      }
+      verify()
+      .then(()=>{
+          req.user = user;
+          next();
+      })
+      .catch(err=>{
+          res.redirect('/login')
+      })
+
+}
+
+
+app.get("/login_index", (req, res) => {
+	res.render("login_index");
+})
+
+app.get('/logout', (req, res)=>{
+    res.clearCookie('session-token');
+    res.redirect('/login')
+
+})
+
+app.get('/protectedRoute', checkAuthenticated (req,res)=>{
     res.send('This route is protected')
 })
 

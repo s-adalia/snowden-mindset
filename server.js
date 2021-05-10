@@ -40,12 +40,12 @@ app.post('/login', (req,res)=>{
 
 })
 
-app.get('/profile', checkAuthenticated (req, res)=>{
+app.get('/profile', /*checkAuthenticated*/ (req, res)=>{
     let user = req.user;
     res.render('profile', {user});
 })
 
-function checkAuthenticated(req, res, next){
+/*function checkAuthenticated(req, res, next){
 
     let token = req.cookies['session-token'];
 
@@ -69,7 +69,7 @@ function checkAuthenticated(req, res, next){
           res.redirect('/login')
       })
 
-}
+}*/
 
 
 app.get("/login_index", (req, res) => {
@@ -82,7 +82,7 @@ app.get('/logout', (req, res)=>{
 
 })
 
-app.get('/protectedRoute', checkAuthenticated (req,res)=>{
+app.get('/protectedRoute', /*checkAuthenticated*/ (req,res)=>{
     res.send('This route is protected')
 })
 

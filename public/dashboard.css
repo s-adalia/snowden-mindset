@@ -1,0 +1,24 @@
+body {
+  font-family: "Palatino";
+  font-size: 20px;
+ margin: auto;
+ margin-bottom: 40px;
+ margin-left: 50px;
+}
+
+
+h2 {
+  font-family: "Palatino";
+  font-size: 32px;
+  padding: 15px; 
+  border-radius:15px;
+  margin: auto; 
+  margin-right: 930px;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+

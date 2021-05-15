@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5001;
 
 app.use(express.static('public'));
 
-app.get("/", (req, res) => {
+app.get("/",  (req, res) => {
 	res.render("index");
 })
 
@@ -40,12 +40,12 @@ app.post('/login', (req,res)=>{
 
 })
 
-app.get('/profile', /*checkAuthenticated*/ (req, res)=>{
+app.get('/profile', checkAuthenticated, (req, res)=>{
     let user = req.user;
     res.render('profile', {user});
 })
 
-/*function checkAuthenticated(req, res, next){
+function checkAuthenticated(req, res, next){
 
     let token = req.cookies['session-token'];
 
@@ -69,7 +69,7 @@ app.get('/profile', /*checkAuthenticated*/ (req, res)=>{
           res.redirect('/login')
       })
 
-}*/
+}
 
 
 app.get("/login_index", (req, res) => {
@@ -82,23 +82,23 @@ app.get('/logout', (req, res)=>{
 
 })
 
-app.get('/protectedRoute', /*checkAuthenticated*/ (req,res)=>{
+app.get('/protectedRoute', checkAuthenticated, (req,res)=>{
     res.send('This route is protected')
 })
 
-app.get("/survey_books", (req, res) => {
+app.get("/survey_books", checkAuthenticated, (req, res) => {
 	res.render("survey_books");
 })
 
-app.get("/survey_music", (req, res) => {
+app.get("/survey_music", checkAuthenticated, (req, res) => {
 	res.render("survey_music");
 })
 
-app.get("/admin", (req, res) => {
+app.get("/admin", checkAuthenticated, (req, res) => {
 	res.render("admin");
 })
 
-app.get("/edit_books", (req, res) => {
+app.get("/edit_books", checkAuthenticated, (req, res) => {
 	res.render("edit_books");
 })
 
